@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AR информатика сабағы</title>
+  <style>
+    /* Таза, жеңіл және заманауи дизайн */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      background: linear-gradient(135deg, #f0f4ff 0%, #d9e4ff 100%);
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #3458f4;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      font-weight: 800;
+      font-size: 2rem;
+      box-shadow: 0 4px 15px rgba(52, 88, 244, 0.5);
+    }
+
+    nav {
+      background: #2a47d8;
+      padding: 18px 10px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 12px rgba(42, 71, 216, 0.4);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      background: #e3e9ff;
+      color: #2a47d8;
+      font-weight: 600;
+      padding: 12px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(42, 71, 216, 0.25);
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      font-size: 1rem;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background-color: #2a47d8;
+      color: #fff;
+      box-shadow: 0 6px 14px rgba(42, 71, 216, 0.6);
+      outline: none;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto 80px;
+      padding: 0 20px;
+    }
+
+    section {
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px 35px;
+      margin-bottom: 45px;
+      box-shadow: 0 8px 25px rgba(52, 88, 244, 0.15);
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      transition: transform 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(52, 88, 244, 0.3);
+    }
+
+    section img {
+      max-width: 220px;
+      border-radius: 14px;
+      flex-shrink: 0;
+      object-fit: contain;
+      box-shadow: 0 4px 10px rgba(52, 88, 244, 0.2);
+      background: #f5faff;
+      padding: 10px;
+    }
+
+    section div.content {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    h2 {
+      color: #3458f4;
+      margin-bottom: 18px;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    h3 {
+      color: #2a47d8;
+      margin-top: 20px;
+      margin-bottom: 12px;
+      font-weight: 600;
+      font-size: 1.3rem;
+    }
+
+    ul {
+      padding-left: 22px;
+      margin-top: 8px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .video-container {
+      width: 100%;
+      margin: 30px 0;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(52, 88, 244, 0.3);
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 18px;
+    }
+
+    footer {
+      background: #2a47d8;
+      color: #f1f1f1;
+      text-align: center;
+      padding: 20px 15px;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      box-shadow: 0 -4px 10px rgba(42, 71, 216, 0.4);
+    }
+
+    a.inline-link {
+      color: #3458f4;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    a.inline-link:hover,
+    a.inline-link:focus {
+      border-color: #3458f4;
+      outline: none;
+    }
+
+    /* Мобильді үйлесімділік */
+    @media (max-width: 650px) {
+      nav {
+        gap: 8px;
+        padding: 12px 5px;
+      }
+      nav a {
+        padding: 8px 14px;
+        font-size: 0.9rem;
+      }
+      section {
+        flex-direction: column;
+        padding: 25px 20px;
+      }
+      section img {
+        margin: 0 auto 20px;
+        max-width: 100%;
+      }
+      main {
+        margin: 30px 10px 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h2 style="font-family: 'Arial', sans-serif; text-align: center; font-size: 36px;">
+  Кеңейтілген шындық (AR) информатика сабағын қалай өзгертеді?
+</h2>
+
+<nav>
+  <a href="#ar-nee">AR деген не?</a>
+  <a href="#inform">Информатикада AR</a>
+  <a href="#tools">Құралдар мен ресурстар</a>
+  <a href="#3d-platforms">3D платформалар</a>
+  <a href="#projects">AR жобалары</a>
+  <a href="#guides">Нұсқаулықтар</a>
+</nav>
+
+<main>
+
+  <section id="intro" style="flex-direction: column; text-align: center;">
+    <p style="font-weight: 700; font-size: 1.25rem; max-width: 700px; margin: auto;">
+      Кеңейтілген шындық (AR) информатика сабағын түбірімен өзгертіп, оқушыларға алгоритмдер мен деректер құрылымдарын көзбен көруге мүмкіндік береді. Бұл технология сабақтарды қызықты, көрнекі және интерактивті етеді.
+    </p>
+    <img src="arvr.jpg" alt="Кеңейтілген шындық (AR)" style="display: block; margin: 0 auto; width: 200px; height: 200px;" />
+</section>
+  <section id="ar-nee">
+    <img src="https://cdn-icons-png.flaticon.com/512/3576/3576319.png" alt="AR Icon" />
+    <div class="content">
+      <h2>AR деген не?</h2>
+      <p><strong>AR (Кеңейтілген шындық)</strong> — бұл шынайы әлемге виртуалды объектілер мен ақпараттарды қосу технологиясы.</p>
+      <h3>Негізгі түрлері:</h3>
+      <ul>
+        <li><strong>Виртуалды шындық (VR):</strong> Толығымен жасанды виртуалды ортаға ену.</li>
+        <li><strong>Қосылған шындық (MR):</strong> Виртуалды және нақты әлем элементтерінің араласуы.</li>
+        <li><strong>Кеңейтілген шындық (AR):</strong> Нақты әлемге қосымша виртуалды қабаттарды қосу.</li>
+      </ul>
+      <h3>AR қалай жұмыс істейді?</h3>
+      <p>Камера, сенсорлар (жарық, қозғалыс, GPS) және бағдарламалық қамтамасыз ету арқылы нақты ортаға виртуалды объектілер қосылады.</p>
+    </div>
+  </section>
+
+  <section id="inform">
+      <h2>Информатикада AR қолдану</h2>
+      <ul>
+        <!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Компьютер құрылғылары</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Material+Icons');
+
+  body { font-family: Arial, sans-serif; max-width: 700px; margin: 20px auto; padding: 0 15px; background: #f9f9f9; }
+  h1 { text-align: center; color: #333; }
+  .device {
+    background: #fff;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .icon {
+    font-family: 'Material Icons';
+    font-size: 48px; /* Кішірейтілген өлшем */
+    color: #2a9df4;
+    width: 70px;
+    text-align: center;
+  }
+  .device div {
+    flex: 1;
+  }
+  button {
+    display: block;
+    margin: 25px auto;
+    padding: 10px 25px;
+    font-size: 18px;
+    border: none;
+    background-color: #2a9df4;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #2177cc;
+  }
+</style>
+</head>
+<body>
+
+<h1>Компьютердің негізгі құрылғылары</h1>
+
+<div class="device" id="cpu">
+  <span class="icon">memory</span>
+  <div>
+    <h2>Процессор (CPU)</h2>
+    <p>Процессор – компьютердің "миы", ол барлық есептеулерді орындайды және бағдарламаларды басқарады.</p>
+  </div>
+</div>
+
+<div class="device" id="ram">
+  <span class="icon">storage</span>
+  <div>
+    <h2>Жедел жады (RAM)</h2>
+    <p>Жедел жады – ақпаратты уақытша сақтайтын құрылғы, ол бағдарламалардың жылдам жұмыс істеуіне көмектеседі.</p>
+  </div>
+</div>
+
+<div class="device" id="motherboard">
+  <span class="icon">developer_board</span>
+  <div>
+    <h2>Аналық плата (Motherboard)</h2>
+    <p>Аналық плата – компьютердің барлық компоненттерін байланыстыратын негізгі тақта.</p>
+  </div>
+</div>
+
+<div class="device" id="hdd">
+  <span class="icon">dns</span>
+  <div>
+    <h2>Қатты диск (HDD/SSD)</h2>
+    <p>Қатты диск – мәліметтерді тұрақты сақтайтын құрылғы.</p>
+  </div>
+</div>
+
+<div class="device" id="gpu">
+  <span class="icon">graphic_eq</span>
+  <div>
+    <h2>Бейне карта (GPU)</h2>
+    <p>Бейне карта – графиканы өңдейтін және мониторға шығаратын құрылғы.</p>
+  </div>
+</div>
+
+<div class="device" id="psu">
+  <span class="icon">power</span>
+  <div>
+    <h2>Қуат көзі (Power Supply)</h2>
+    <p>Қуат көзі – компьютерге қажетті электр қуатын қамтамасыз етеді.</p>
+  </div>
+</div>
+
+<div class="device" id="monitor">
+  <span class="icon">tv</span>
+  <div>
+    <h2>Монитор</h2>
+    <p>Монитор – компьютердің көрінетін бөлігі, экран арқылы ақпарат көрсетеді.</p>
+  </div>
+</div>
+
+<div class="device" id="keyboard">
+  <span class="icon">keyboard</span>
+  <div>
+    <h2>Пернетақта (Keyboard)</h2>
+    <p>Пернетақта – компьютерге мәтін енгізуге арналған құрылғы.</p>
+  </div>
+</div>
+
+<div class="device" id="mouse">
+  <span class="icon">mouse</span>
+  <div>
+    <h2>Тышқан (Mouse)</h2>
+    <p>Тышқан – компьютер экранындағы элементтерді басқаруға арналған құрылғы.</p>
+  </div>
+</div>
+
+<button id="speakBtn">Ақпаратты дауыспен тыңдау</button>
+
+<script>
+  const texts = [
+    "Процессор – компьютердің миы, ол барлық есептеулерді орындайды және бағдарламаларды басқарады.",
+    "Жедел жады – ақпаратты уақытша сақтайтын құрылғы, ол бағдарламалардың жылдам жұмыс істеуіне көмектеседі.",
+    "Аналық плата – компьютердің барлық компоненттерін байланыстыратын негізгі тақта.",
+    "Қатты диск – мәліметтерді тұрақты сақтайтын құрылғы.",
+    "Бейне карта – графиканы өңдейтін және мониторға шығаратын құрылғы.",
+    "Қуат көзі – компьютерге қажетті электр қуатын қамтамасыз етеді.",
+    "Монитор – компьютердің көрінетін бөлігі, экран арқылы ақпарат көрсетеді.",
+    "Пернетақта – компьютерге мәтін енгізуге арналған құрылғы.",
+    "Тышқан – компьютер экранындағы элементтерді басқаруға арналған құрылғы."
+  ];
+
+  document.getElementById('speakBtn').addEventListener('click', () => {
+    if (!window.speechSynthesis) {
+      alert('Сізде дауыспен оқу функциясы қолжетімсіз.');
+      return;
+    }
+
+    let index = 0;
+    function speakNext() {
+      if(index >= texts.length) return;
+      let utterance = new SpeechSynthesisUtterance(texts[index]);
+      utterance.lang = 'kk-KZ';
+      utterance.rate = 0.9;
+      utterance.onend = () => {
+        index++;
+        speakNext();
+      }
+      speechSynthesis.speak(utterance);
+    }
+
+    speakNext();
+  });
+</script>
+
+</body>
+</html>
+
+      </ul>
+    </div>
+  </section>
+
+  <section id="tools">
+    <img src="https://cdn-icons-png.flaticon.com/512/906/906175.png" alt="Tools" />
+    <div class="content">
+      <h2>Құралдар мен ресурстар</h2>
+      <ul>
+        <li><strong>Unity + Vuforia:</strong> AR жобаларын жасауға арналған платформа — <a href="https://unity.com/" target="_blank" class="inline-link">Unity ресми сайты</a>, <a href="https://developer.vuforia.com/" target="_blank" class="inline-link">Vuforia ресми сайты</a></li>
+        <li><strong>AR.js:</strong> Браузер арқылы AR тәжірибесін жүзеге асыру — <a href="https://ar-js-org.github.io/AR.js-Docs/" target="_blank" class="inline-link">AR.js ресми сайты</a></li>
+        <li><strong>Spark AR:</strong> Әлеуметтік желілерге арналған AR эффектілер жасау — <a href="https://sparkar.facebook.com/ar-studio/" target="_blank" class="inline-link">Spark AR Studio</a></li>
+        <li>Бейне сабақтар мен онлайн курстарға сілтемелер (YouTube, Coursera)</li>
+ <h3>YouTube бейне сабақтары</h3>
+  <ul>
+    <li>
+      <a href="https://www.youtube.com/watch?v=2QjvRGD5Cq8" target="_blank" rel="noopener noreferrer">
+        Augmented Reality Tutorial for Beginners | What is AR? | How AR Works
+      </a>  
+      — Кеңейтілген шындық негіздері мен жұмыс істеу принциптері.
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=5HlF4b7nwwM" target="_blank" rel="noopener noreferrer">
+        Create AR Apps with Unity & Vuforia | Augmented Reality Tutorial
+      </a>  
+      — Unity және Vuforia көмегімен AR қосымшасын жасау бойынша толық нұсқаулық.
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=9B5CF7USrR0" target="_blank" rel="noopener noreferrer">
+        AR.js Tutorial - Build Web Augmented Reality Applications
+      </a>  
+      — Вебке арналған AR.js кітапханасымен қарапайым AR тәжірибесін жасау.
+    </li>
+    <li>
+      <a href="https://www.youtube.com/playlist?list=PLhQjrBD2T380dhT-ZD3jFG4Pl7sL7fQMN" target="_blank" rel="noopener noreferrer">
+        Introduction to Computer Science | Harvard's CS50 2023
+      </a>  
+      — Компьютерлік ғылымның негізгі түсініктерін түсіндіретін тегін курс.
+    </li>
+  </ul>
+
+  <h3>Coursera онлайн курстары</h3>
+  <ul>
+    <li>
+      <a href="https://www.coursera.org/learn/introduction-augmented-reality-arcore" target="_blank" rel="noopener noreferrer">
+        Introduction to Augmented Reality and ARCore (Google AR & VR)
+      </a>  
+      — AR технологиясына кіріспе, Google ARCore платформасында жұмыс істеу.
+    </li>
+    <li>
+      <a href="https://www.coursera.org/learn/unity-xr-build-ar-vr-apps" target="_blank" rel="noopener noreferrer">
+        Unity XR: How to Build AR and VR Apps
+      </a>  
+      — Unity ортасында AR және VR қолданбаларын жасауды үйрететін курс.
+    </li>
+    <li>
+      <a href="https://www.coursera.org/learn/python" target="_blank" rel="noopener noreferrer">
+        Programming for Everybody (Getting Started with Python)
+      </a>  
+      — Python тілін үйренуге арналған курс. Python AR жобалары үшін пайдалы.
+    </li>
+  </ul>
+</section>
+      </ul>
+    </div>
+  </section>
+
+  <section id="3d-platforms">
+    <img src="https://cdn-icons-png.flaticon.com/512/1995/1995496.png" alt="3D Platforms" />
+    <div class="content">
+      <h2>Алгоритмдерді 3D визуализациялауға арналған платформалар</h2>
+      <ul>
+        <li>
+          <strong>Unity 3D + Vuforia:</strong> Ең танымал 3D және AR платформасы. Алгоритмдерді 3D анимациялар мен интерактивті көріністер түрінде жасауға болады. 
+          <br><a href="https://unity.com/" target="_blank" class="inline-link">Unity ресми сайты</a> | <a href="https://developer.vuforia.com/" target="_blank" class="inline-link">Vuforia ресми сайты</a>
+        </li>
+        <li>
+          <strong>Blender:</strong> Тегін 3D модельдеу және анимация құралы. Python скрипттері арқылы алгоритмдерді анимациялауға мүмкіндік береді. 
+          <br><a href="https://www.blender.org/" target="_blank" class="inline-link">Blender ресми сайты</a>
+        </li>
+        <li>
+          <strong>Processing + P3D:</strong> Оқушыларға арналған визуалды кодтау ортасы, 3D визуализацияны қолдайды.
+          <br><a href="https://processing.org/" target="_blank" class="inline-link">Processing ресми сайты</a>
+        </li>
+        <li>
+          <strong>Tinkercad + WebXR:</strong> Қарапайым 3D модельдеу мен браузерде AR/VR көрсетуге мүмкіндік береді.
+          <br><a href="https://www.tinkercad.com/" target="_blank" class="inline-link">Tinkercad ресми сайты</a>
+        </li>
+        <li>
+          <strong>Merge Cube:</strong> Физикалық куб арқылы AR объектілерін интерактивті көрсетуге арналған платформа.
+          <br><a href="https://mergeedu.com/merge-cube" target="_blank" class="inline-link">Merge Cube ресми сайты</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+  
+    <div class="content">
+      <h2>AR жобалары</h2>
+      <!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AR жобалар</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f9f9f9; }
+    h1 { color: #2c3e50; }
+    p, ul { font-size: 18px; line-height: 1.6; color: #34495e; }
+    ul { padding-left: 20px; }
+    .section { margin-bottom: 30px; }
+  </style>
+</head>
+<body>
+  <h1>Оқушыларға арналған AR тапсырмалар</h1>
+
+  <div class="section">
+    <h2>1. 3D Алгоритмдік блоктар құрастыру</h2>
+    <p><strong>Міндеті:</strong> Оқушылар AR арқылы виртуалды блоктармен алгоритм құрады.</p>
+    <p><strong>Құрал:</strong> Unity + Vuforia немесе HP Reveal.</p>
+    <p><strong>Тапсырма:</strong> Берілген алгоритмдік тапсырма бойынша (мысалы, сандарды сұрыптау) 3D блоктар арқылы дұрыс орындау ретін көрсетіңдер.</p>
+    <p><strong>Нәтиже:</strong> Алгоритмнің жұмысын көзбен көру.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. Компьютер құрылғыларын зерттеу</h2>
+    <p><strong>Міндеті:</strong> AR көмегімен компьютердің негізгі құрылғыларын (процессор, аналық плата, жад) үшөлшемді модель ретінде қарастыру.</p>
+    <p><strong>Құрал:</strong> ZapWorks немесе AR.js.</p>
+    <p><strong>Тапсырма:</strong> Әр құрылғының қызметін айтып бер және моделін айналдырып қара.</p>
+    <p><strong>Нәтиже:</strong> Компьютер аппараттық бөлігінің жұмысын түсіну.</p>
+  </div>
+
+  <div class="section">
+    <h2>3. Бағдарламалау тілінің синтаксисін визуализациялау</h2>
+    <p><strong>Міндеті:</strong> Кодтың логикасын AR арқылы көрсету.</p>
+    <p><strong>Құрал:</strong> Unity + Vuforia.</p>
+    <p><strong>Тапсырма:</strong> Қарапайым цикл немесе шартты оператор жазып, оның жұмысын AR-де анимация ретінде көру.</p>
+    <p><strong>Нәтиже:</strong> Кодтың қалай жұмыс істейтінін көру және түсіну.</p>
+  </div>
+
+  <div class="section">
+    <h2>4. Интерактивті математика және логика</h2>
+    <p><strong>Міндеті:</strong> Логикалық тапсырмалар немесе есептерді AR арқылы шешу.</p>
+    <p><strong>Құрал:</strong> HP Reveal немесе мобильді AR қосымшалар.</p>
+    <p><strong>Тапсырма:</strong> Логикалық операцияларды (AND, OR, NOT) көрсететін виртуалды элементтерді пайдаланып тапсырмаларды орындау.</p>
+    <p><strong>Нәтиже:</strong> Логика негіздерін терең меңгеру.</p>
+  </div>
+
+  <div class="section">
+    <h2>5. AR негізіндегі шағын жоба жасау</h2>
+    <p><strong>Міндеті:</strong> Оқушылар өздері шағын AR жоба жасайды (мысалы, «Менің цифрлық әлемім» тақырыбында).</p>
+    <p><strong>Құрал:</strong> Unity, ZapWorks, немесе AR.js.</p>
+    <p><strong>Тапсырма:</strong> Қарапайым AR сценасын жасап, оған мәтін, 3D модель немесе анимация қосу.</p>
+    <p><strong>Нәтиже:</strong> Жобалау және шығармашылық дағдыларын дамыту.</p>
+  </div>
+
+  <div class="section">
+    <h2>Қосымша кеңестер</h2>
+    <ul>
+      <li>Оқушыларға AR тапсырмаларды орындау барысында топпен жұмыс жасауға мүмкіндік беру өте пайдалы.</li>
+      <li>Тапсырмаларды жақсы нұсқаулықпен және мысалдармен бірге беру керек.</li>
+      <li>Оқушылардың тапсырманы орындау барысын бақылап, кері байланыс беру маңызды.</li>
+    </ul>
+  </div>
+</body>
+</html>
+    </div>
+  </section>
+
+  <section id="guides">
+
+    <div class="content">
+      <button id="show-ar-guide" 
+          style="padding: 10px 20px; font-size: 16px; cursor: pointer; margin-bottom: 15px;">
+    AR технологиясын қолдану туралы мұғалімдерге арналған нұсқаулық
+  </button>
+
+  <div id="ar-guide-content" style="display: none; border: 1px solid #ccc; padding: 15px; border-radius: 8px; background-color: #f9f9f9;">
+    <h3>1. AR технологиясы деген не?</h3>
+    <p>Кеңейтілген шындық (Augmented Reality, AR) — нақты әлемге виртуалды элементтерді (3D модельдер, мәтіндер, анимациялар) қосуды қамтамасыз ететін технология. Бұл технология арқылы оқушылар нақты ортаны және виртуалды ақпаратты бірігіп көріп, оқыту процесі интерактивті әрі қызықты болады.</p>
+    
+    <h3>2. AR технологиясын сабаққа не үшін қолдану керек?</h3>
+    <ul>
+      <li>Оқушылардың қызығушылығын арттыру.</li>
+      <li>Қиын тақырыптарды визуалды түрде түсіндіру.</li>
+      <li>Практикалық дағдыларды дамыту.</li>
+      <li>Технологияны игеру арқылы болашақ мамандыққа дайындық.</li>
+    </ul>
+
+    <h3>3. Қандай құралдар қажет?</h3>
+    <ul>
+      <li>Смартфон немесе планшет (камерасы бар).</li>
+      <li>AR қолданбалар немесе платформалар (мысалы: HP Reveal, ZapWorks, Unity + Vuforia, AR.js).</li>
+      <li>AR контентін жасауға арналған бағдарламалар.</li>
+    </ul>
+
+    <h3>4. Информатикада AR-ды қалай қолдануға болады?</h3>
+    <ul>
+      <li>3D модельдерді көрсету: Мысалы, алгоритмдерді немесе компьютер архитектурасын 3D форматта көрсету.</li>
+      <li>Интерактивті жаттығулар: Оқушылар виртуалды объектілермен өзара әрекеттесіп, тапсырмаларды орындай алады.</li>
+      <li>Сабақ презентацияларын байыту: Тек мәтін мен сурет емес, анимацияланған және интерактивті материалдар.</li>
+      <li>Бағдарламалау негіздері: Unity немесе AR.js көмегімен қарапайым AR жобаларын жасау.</li>
+    </ul>
+
+    <h3>5. Сабақта AR технологиясын енгізу кезеңдері:</h3>
+    <ul>
+      <li>Дайындық: Мақсатты анықтау, қажетті бағдарламалар мен құрылғыларды таңдау.</li>
+      <li>Контент жасау: AR материалдарын дайындау (3D модельдер, анимациялар, мәтіндер).</li>
+      <li>Сабақты жоспарлау: AR элементтерін сабақ жоспарына енгізу.</li>
+      <li>Жүргізу: Оқушыларға AR технологиясын таныстырып, тапсырмаларды орындау.</li>
+      <li>Бағалау: Оқушылардың AR технологиясын меңгеру деңгейін тексеру.</li>
+    </ul>
+
+    <h3>6. Қолдануға арналған танымал AR платформалары:</h3>
+    <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+      <thead>
+        <tr>
+          <th>Платформа</th>
+          <th>Сипаттама</th>
+          <th>Бағасы</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>HP Reveal</td>
+          <td>Қарапайым AR жасауға арналған</td>
+          <td>Тегін</td>
+        </tr>
+        <tr>
+          <td>ZapWorks</td>
+          <td>Кәсіби деңгейдегі AR контент жасау</td>
+          <td>Тегін/Төлемді</td>
+        </tr>
+        <tr>
+          <td>Unity + Vuforia</td>
+          <td>Күрделі AR қосымшаларын жасауға арналған</td>
+          <td>Тегін/Төлемді</td>
+        </tr>
+        <tr>
+          <td>AR.js</td>
+          <td>Веб-AR жасауға арналған кітапхана</td>
+          <td>Тегін</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>7. Мұғалімдерге кеңестер:</h3>
+    <ul>
+      <li>Алдымен өзіңіз AR құралдарын зерттеп үйреніңіз.</li>
+      <li>Оқушылармен бірге шағын жобалар жасаңыз.</li>
+      <li>Қауіпсіздік пен құрылғылардың жарамдылығына назар аударыңыз.</li>
+      <li>AR-ды басқа пәндермен интеграциялауға да болады (математика, физика, биология).</li>
+      <li>Оқушылардың кері байланысын алып, технологияны жақсартыңыз.</li>
+    </ul>
+
+    <h3>8. Қосымша ресурстар:</h3>
+    <ul>
+      <li><a href="https://edu.google.com/intl/ru-ru/resources/programs/ar-vr-in-education/" target="_blank" rel="noopener noreferrer">Augmented Reality for Education — Google for Education</a></li>
+      <li><a href="https://learn.unity.com/" target="_blank" rel="noopener noreferrer">Unity Learn AR tutorials</a></li>
+      <li><a href="https://www.coursera.org/learn/introduction-augmented-reality-arcore" target="_blank" rel="noopener noreferrer">Coursera: Introduction to Augmented Reality</a></li>
+    </ul>
+  </div>
+</section>
+
+<script>
+  document.getElementById('show-ar-guide').addEventListener('click', function() {
+    const content = document.getElementById('ar-guide-content');
+    if (content.style.display === 'none' || content.style.display === '') {
+      content.style.display = 'block';
+      this.textContent = 'Нұсқаулықты жасыру';
+    } else {
+      content.style.display = 'none';
+      this.textContent = 'AR технологиясын қолдану туралы мұғалімдерге арналған нұсқаулық';
+    }
+  });
+</script>
+
+  
+      </ul>
+    </div>
+  </section>
+
+  
